@@ -4,6 +4,7 @@ import { RectButton } from 'react-native-gesture-handler'
 export const Container = styled.View`
 flex: 1;
 padding: 30px;
+background: #eaeaea;
 `;
 
 export const Form = styled.View`
@@ -28,7 +29,7 @@ border: 1px solid #eee;
 export const SubmitButton = styled(RectButton)`
 justify-content: center;
 align-items: center;
-background: #7159c1;
+background: #db190b;
 border-radius: 4px;
 margin-left: 10px;
 padding: 0 12px;
@@ -75,7 +76,7 @@ export const ProfileButton = styled(RectButton)`
 margin-top: 10px;
 align-self: stretch;
 border-radius: 4px;
-background: #7159c1;
+background: #db190b;
 justify-content: center;
 align-items: center;
 height: 36px;
@@ -85,6 +86,11 @@ font-size: 14px;
 font-weight: bold;
 color: #fff;
 text-transform: uppercase;
+`;
+
+export const Logo = styled.Image`
+    width: 100px;
+    height: 100px;
 `;
 
 
