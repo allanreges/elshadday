@@ -1,18 +1,19 @@
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 import Main from './Main'
-import User from './User'
+import Event from './Event'
+import Footer from './Components/Footer'
 
 const Routes = createAppContainer(
     createStackNavigator({
         Main,
-        User
+        Event
     }, {
         headerLayoutPreset: 'center',
         headerBackTitleVisible: false,
         defaultNavigationOptions: {
             headerStyle: {
-                backgroundColor: '#CD5C5C'
+                backgroundColor: '#bf2726'
             },
             headerTintColor: '#fff'
         }

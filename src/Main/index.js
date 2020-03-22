@@ -16,16 +16,32 @@ export default function Main(props) {
 
    async function handleData() {
         const response = await api.get()
-        setData(response)
-        console.tron.log('teste')
+        setData(response.data)
+        console.tron.log(response)
     }
 
+    async function handleNavigate(event) {
+
+        props.navigation.navigate('Event', { event })
+
+    }
 
 
 
   return (
     <Container>
-        <Logo style={{width: 50, height: 50}} source={{ uri: ''}}  />
+
+        <List elevation={5} data={data.events} keyExtractor={event => event.id} renderItem={({ item }) => (
+            <User elevation={5} >
+                <Avatar source={{ uri: item.icon }} />
+                <Name>{item.title}</Name>
+                <Bio>{item.description}</Bio>
+                <ProfileButton onPress={()=> handleNavigate(item)}>
+                    <ProfileButtonText>Programação Detalhada</ProfileButtonText>
+                </ProfileButton>
+
+            </User>
+            )} />
 
     </Container>
   );

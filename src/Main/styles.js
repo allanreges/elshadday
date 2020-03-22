@@ -44,9 +44,13 @@ margin-top: 20px;
 
 `;
 
-export const User = styled.View`
+export const User = styled.View.attrs({
+    elevation: 123
+})`
 align-items: center;
 margin: 0 20px 30px;
+padding: 10px;
+box-shadow: 10px 5px 5px black;
 
 `;
 export const Avatar = styled.Image`
@@ -89,8 +93,9 @@ text-transform: uppercase;
 `;
 
 export const Logo = styled.Image`
-    width: 100px;
-    height: 100px;
+    width: 230px;
+    height: 150px;
+    margin: 30px auto;
 `;
 
 
