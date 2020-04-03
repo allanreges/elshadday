@@ -1,8 +1,15 @@
 import styled from 'styled-components/native';
+import MapView from 'react-native-maps'
 
 export const Container = styled.View`
     flex: 1;
     padding: 30px;
+`;
+
+export const Map = styled(MapView)`
+    width: 100%;
+    height: 300px;
+    flex: 1;
 `;
 
 
@@ -42,7 +49,7 @@ export const Stars = styled.FlatList.attrs({
 margin-top: 20px
 `;
 export const Starred = styled.View`
-background: #000;
+background: #f5f5f5;
 border-radius: 4px;
 padding: 10px 15px;
 margin-bottom: 20px;
