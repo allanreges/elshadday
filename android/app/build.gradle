@@ -154,7 +154,7 @@ android {
         release {
             storeFile file('elshadday.keystore')
             storePassword 'elshadday'
-            keyAlias 'ibf el shadday'
+            keyAlias 'elshadday'
             keyPassword 'elshadday'
         }
     }
