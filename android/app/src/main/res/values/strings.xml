@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">IBF EL SHADDAY</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">sl9m0Z5fDU_dOX9RELWA7SHVJ5BZjzJ96KjQx</string>
 </resources>
