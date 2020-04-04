@@ -151,12 +151,6 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
-        release {
-            storeFile file('elshadday.keystore')
-            storePassword 'elshadday'
-            keyAlias 'elshadday'
-            keyPassword 'elshadday'
-        }
     }
     buildTypes {
         debug {
