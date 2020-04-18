@@ -21,10 +21,12 @@ export default function Event({ navigation }) {
             }
         )
         handleData()
-    }, [event])
+    }, [])
 
     function handleData() {
-        setEvent(navigation.getParam('event'))
+        const location = navigation.getParam('event')
+        setEvent(JSON.parse(location.address))
+        console.tron.log("esse é", event)
     }
 
     return (
@@ -49,8 +51,8 @@ export default function Event({ navigation }) {
                             latitude: coordinates.latitude,
                             longitude: coordinates.longitude,
                         }} destination={{
-                            latitude: event.localization.latitude,
-                            longitude: event.localization.longitude,
+                            latitude: event.latitude,
+                            longitude: event.longitude,
                         }}
                             apikey="AIzaSyD2a2ng9QWRhJZZeUKyMaRyYCEl7iE4PyE"
                             strokeWidth={3}

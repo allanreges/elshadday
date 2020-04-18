@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://demo3092358.mockable.io/'
+    baseURL: ' https://10d91970.ngrok.io'
 })
 
 export default api;
