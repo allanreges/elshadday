@@ -47,8 +47,4 @@ export const Video = styled(WebView)`
     display: flex
     margin: 0 auto;
     border-radius: 15px;
-
-    iframe {
-        border-radius: 15px;
-    }
 `

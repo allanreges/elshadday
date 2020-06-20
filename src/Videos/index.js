@@ -11,14 +11,13 @@ export default function Videos() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        setLoading(true)
         handleData()
     }, [])
 
     async function handleData() {
+        setLoading(true)
         const response = await api.get('/lives')
         setData(response.data.lives)
-        console.tron.log(data)
         setLoading(false)
     }
 
