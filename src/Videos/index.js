@@ -19,7 +19,7 @@ export default function Videos() {
     async function handleData() {
         const response = await api.get('/lives')
         setData(response.data.lives)
-        console.tron.log(response)
+        console.tron.log(data)
         setLoading(false)
     }
 
@@ -28,7 +28,7 @@ export default function Videos() {
         <Container>
             {loading ? (
                 <ActivityIndicator size="large" />
-            ) : (<VideosList data={data} keyExtractor={item => item.id} renderItem={({ item }) =>
+            ) : (<VideosList data={data} keyExtractor={(item, index) => index.toString()} renderItem={({ item }) =>
                 <Video
                     javaScriptEnabled
                     domStorageEnabled

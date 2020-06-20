@@ -15,18 +15,6 @@ border-bottom-width: 1px;
 border-color: #eee;
 `;
 
-export const Input = styled.TextInput.attrs({
-    placeholderTextColor: '#999',
-})`
-flex: 1;
-height: 40px;
-background: #eee;
-border-radius: 4px;
-padding: 0 15px;
-border: 1px solid #eee;
-
-`;
-
 export const SubmitButton = styled(RectButton)`
 justify-content: center;
 align-items: center;
@@ -38,16 +26,12 @@ opacity: ${props => props.loading ? 0.7 : 1}
 
 `;
 
-export const List = styled.FlatList.attrs({
-    showVerticalScrollIndicator: false,
-})`
+export const List = styled.FlatList`
 margin-top: 20px;
 
 `;
 
-export const User = styled.View.attrs({
-    elevation: 123
-})`
+export const User = styled.View`
 align-items: center;
 margin: 0 20px 30px;
 padding: 10px;

@@ -20,19 +20,16 @@ export default function Event({ navigation }) {
         const response = await api.get('/events')
         setData(response.data.events)
         setLoading(false)
-        response.data.events.map(item => {
-            return console.tron.log(item.images[0])
-        })
     }
 
     return (
         <Container>
             {loading ? (
                 <ActivityIndicator size="large" />
-            ) : (<List data={data} keyExtractor={item => item.id} renderItem={({ item }) =>
-                <Bg style={{ resizeMode: 'stretch' }} source={{ uri: `https://d831c80e.ngrok.io/files/${item.images[0].path}` }}>
-                    <Item ><Text>{item.name}</Text><Description>{item.description}</Description></Item>
-                </Bg>
+            ) : (<List data={data} keyExtractor={(item, index) => index.toString()} renderItem={({ item }) =>
+
+                <Item ><Text>{item.name}</Text><Description>{item.description}</Description></Item>
+
             } />)}
         </Container >
     );
