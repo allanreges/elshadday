@@ -1,52 +1,47 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
+import MapViewDirections from 'react-native-maps-directions'
+import Geolocation from '@react-native-community/geolocation'
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import 'react-native-get-random-values';
 import { View, Text, ActivityIndicator, Keyboard } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage'
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import { Container, Logo, List, User, Avatar, Name, Bio, ProfileButton, ProfileButtonText } from './styles';
+import YouTube from 'react-native-youtube';
+import { WebView } from 'react-native-webview';
+import Bg from '../files/img/homeBg.jpg'
+import { Container, Background, BgPicture, Title, SubTitle, TextTitle, Video, Map, MainContainer } from './styles';
 import api from '../services/api'
 
 
 export default function Main(props) {
 
-    const [data, setData] = useState([])
-
-    useEffect(() => {
-        handleData()
-    }, [])
-
-    async function handleData() {
-        const response = await api.get('/events')
-        setData(response.data)
-        console.tron.log(response)
-    }
-
-    async function handleNavigate(event) {
-
-        props.navigation.navigate('Event', { event })
-
-    }
-
-
-
     return (
-        <Container>
+        <>
+            <Container>
+                <BgPicture source={Bg} />
+                <MainContainer>
 
-            <List elevation={5} data={data.events} keyExtractor={event => event.id} renderItem={({ item }) => (
-                <User elevation={5} >
-                    <Avatar source={{ uri: item.icon }} />
-                    <Name>{item.title}</Name>
-                    <Bio>{item.description}</Bio>
-                    <ProfileButton onPress={() => handleNavigate(item)}>
-                        <ProfileButtonText>Programação Detalhada</ProfileButtonText>
-                    </ProfileButton>
-
-                </User>
-            )} />
-
-        </Container>
+                    <Title>
+                        IBF EL SHADDAY
+                </Title>
+                    <SubTitle>
+                        2020 ANO DA MULTIPLICAÇÃO
+                </SubTitle>
+                    <TextTitle>
+                        Última live:
+                </TextTitle>
+                    <Video
+                        javaScriptEnabled
+                        domStorageEnabled
+                        origin="http://www.youtube.com"
+                        source={{ uri: 'https://www.youtube.com/embed/jWDSHDen_sw' }}
+                    />
+                </MainContainer>
+            </Container>
+        </>
     );
 }
 
 Main.navigationOptions = {
-    title: ''
+    tabBarLabel: 'Início',
+    tabBarIcon: ({ tintColor }) => <Icon name="home" size={20} color={tintColor} />
 }
