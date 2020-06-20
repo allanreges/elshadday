@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { View, Text, ActivityIndicator, Keyboard } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage'
+import React, { useState, useEffect } from 'react';
+import { ActivityIndicator } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Container, VideosList, Video } from './styles';
 import api from '../services/api'
