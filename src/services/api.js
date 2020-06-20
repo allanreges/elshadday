@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: ' https://10d91970.ngrok.io'
+    baseURL: 'https://elshadday.herokuapp.com'
 })
 
 export default api;

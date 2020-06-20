@@ -1,6 +1,7 @@
 import styled from 'styled-components/native'
+import { RectButton } from 'react-native-gesture-handler'
 import { WebView } from 'react-native-webview';
-
+import MapView from 'react-native-maps'
 
 export const MainContainer = styled.View`
     flex: 1;
@@ -46,9 +47,11 @@ export const Video = styled(WebView)`
     height: 200px;
     display: flex
     margin: 0 auto;
-    border-radius: 15px;
+`
+export const Map = styled(MapView)`
+    width: 100%;
+    height: 1000px;
+    flex: 1;
+    margin: 0 auto;
 
-    iframe {
-        border-radius: 15px;
-    }
 `

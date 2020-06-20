@@ -2,70 +2,42 @@ import React, { useEffect, useState } from 'react';
 import MapViewDirections from 'react-native-maps-directions'
 import Geolocation from '@react-native-community/geolocation'
 import { ActivityIndicator } from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../services/api'
-import { Container, Header, Avatar, Name, Bio, Map } from './styles'
+import { Container, List, Item, Bg, Text, Description } from './styles'
 
 
 
 export default function Event({ navigation }) {
-    const [event, setEvent] = useState('')
     const [loading, setLoading] = useState(true)
-    const [coordinates, setCoordinates] = useState({})
+    const [data, setData] = useState([])
 
     useEffect(() => {
-        Geolocation.getCurrentPosition(
-            ({ coords }) => {
-                setCoordinates(coords)
-                // console.tron.log(coords)
-                setLoading(false)
-            }
-        )
         handleData()
     }, [])
 
-    function handleData() {
-        const location = navigation.getParam('event')
-        setEvent(JSON.parse(location.address))
-        console.tron.log("esse é", event)
+    async function handleData() {
+        const response = await api.get('/events')
+        setData(response.data.events)
+        setLoading(false)
+        response.data.events.map(item => {
+            return console.tron.log(item.images[0])
+        })
     }
 
     return (
         <Container>
-            <Header>
-                <Avatar source={{ uri: event.icon }} />
-                <Name>{event.title}</Name>
-                <Bio>{event.description}</Bio>
-            </Header>
             {loading ? (
                 <ActivityIndicator size="large" />
-            ) : (
-                    <Map
-                        initialRegion={{
-                            latitude: coordinates.latitude,
-                            longitude: coordinates.longitude,
-                            latitudeDelta: 0.001,
-                            longitudeDelta: 0.001,
-                        }}
-                    >
-                        <MapViewDirections origin={{
-                            latitude: coordinates.latitude,
-                            longitude: coordinates.longitude,
-                        }} destination={{
-                            latitude: event.latitude,
-                            longitude: event.longitude,
-                        }}
-                            apikey="AIzaSyD2a2ng9QWRhJZZeUKyMaRyYCEl7iE4PyE"
-                            strokeWidth={3}
-                            strokeColor="red"
-                        />
-                    </Map>
-                )}
-
-        </Container>
+            ) : (<List data={data} keyExtractor={item => item.id} renderItem={({ item }) =>
+                <Bg style={{ resizeMode: 'stretch' }} source={{ uri: `https://d831c80e.ngrok.io/files/${item.images[0].path}` }}>
+                    <Item ><Text>{item.name}</Text><Description>{item.description}</Description></Item>
+                </Bg>
+            } />)}
+        </Container >
     );
 }
-
 Event.navigationOptions = {
-    title: ''
+    tabBarLabel: 'Eventos',
+    tabBarIcon: ({ tintColor }) => <Icon name="event" size={20} color={tintColor} />
 }
-
