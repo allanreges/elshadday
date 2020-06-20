@@ -133,8 +133,8 @@ android {
         applicationId "com.learningreactnative"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 101008
-        versionName "1.2.4"
+        versionCode 101009
+        versionName "1.2.5"
     }
     splits {
         abi {
