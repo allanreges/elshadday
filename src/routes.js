@@ -5,6 +5,7 @@ import Main from './Main'
 import Event from './Event'
 import Videos from './Videos'
 import Location from './Location'
+import Prays from './Prays'
 
 
 const Routes = createAppContainer(
@@ -13,7 +14,8 @@ const Routes = createAppContainer(
             Main,
             Event,
             Videos,
-            Location
+            Location,
+            Prays
         }, {
             tabBarOptions: {
                 keyboardHidesTabBar: true,

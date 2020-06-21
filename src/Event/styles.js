@@ -4,7 +4,7 @@ import { WebView } from 'react-native-webview';
 
 export const Container = styled.View`
 flex: 1;
-padding: 30px 5px;
+padding: 30px 15px;
 background: #eaeaea;
 `;
 
@@ -101,20 +101,22 @@ export const List = styled.FlatList.attrs({
 `;
 
 export const Text = styled.Text`
-    font-size: 24px;
+    font-size: 19px;
     color: white;
     text-transform: uppercase;
-    padding: 20px 0 0 0;
+    padding: 50px 20px 0 20px;
     font-weight: bold;
     text-align: center;
     width: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
 `
 
 export const Item = styled.View`
     flex: 1;
     flex-direction: row;
     border-radius: 10px;
+    align-items: center;
 
 `
 export const Bg = styled.ImageBackground`
@@ -124,17 +126,18 @@ export const Bg = styled.ImageBackground`
     position: relative;
     z-index: 1;
     display: flex;
+    background: rgba(0, 0, 0, 0.3);
 `
 export const Description = styled.Text`
-    font-size: 18px;
+    font-size: 16px;
     width: 100%;
-    background: #e66d05;
-    color: white;
-    padding: 10px;
+    height: 100%;
+    background: #fff;
+    color: #db190b;
+    padding: 20px 10px 10px 10px;
     font-weight: bold;
-
-
-
+    text-align: center;
+    line-height: 22px;
 `
 
 

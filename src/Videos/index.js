@@ -39,6 +39,6 @@ export default function Videos() {
 }
 
 Videos.navigationOptions = {
-    tabBarLabel: 'Pregações',
+    tabBarLabel: 'Lives',
     tabBarIcon: ({ tintColor }) => <Icon name="airplay" size={20} color={tintColor} />
 }

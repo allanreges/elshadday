@@ -12,6 +12,7 @@ import { Container, Background, BgPicture, Title, SubTitle, TextTitle, Video, Ma
 import api from '../services/api'
 
 
+
 export default function Main(props) {
 
     return (
@@ -33,7 +34,7 @@ export default function Main(props) {
                         javaScriptEnabled
                         domStorageEnabled
                         origin="http://www.youtube.com"
-                        source={{ uri: 'https://www.youtube.com/embed/jWDSHDen_sw' }}
+                        source={{ uri: 'https://www.youtube.com/embed/B9H8tjoQaAY' }}
                     />
                 </MainContainer>
             </Container>

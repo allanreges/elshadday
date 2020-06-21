@@ -1,5 +1,4 @@
 import styled from 'styled-components/native'
-import { RectButton } from 'react-native-gesture-handler'
 import { WebView } from 'react-native-webview';
 import MapView from 'react-native-maps'
 
