@@ -27,7 +27,7 @@ export default function Event({ navigation }) {
             {loading ? (
                 <ActivityIndicator size="large" />
             ) : (<List data={data} keyExtractor={(item, index) => index.toString()} renderItem={({ item }) =>
-                <Bg source={{ uri: `https://elshadday.herokuapp.com/files/${item.images[0].path}` }}>
+                <Bg source={{ uri: `${item.images[0].path}` }}>
                     <Item ><Text>{item.name}</Text><Description>{item.description}</Description></Item>
                 </Bg>
             } />)}
