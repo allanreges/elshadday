@@ -15,6 +15,20 @@ import api from '../services/api'
 
 export default function Main(props) {
 
+    const [data, setData] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        handleData()
+    }, [])
+
+    async function handleData() {
+        setLoading(true)
+        const response = await api.get('/lives')
+        setData(response.data.lives)
+        setLoading(false)
+    }
+
     return (
         <>
             <Container>
@@ -28,14 +42,14 @@ export default function Main(props) {
                         2020 ANO DA MULTIPLICAÇÃO
                 </SubTitle>
                     <TextTitle>
-                        Última live:
+                        Próxima Live:
                 </TextTitle>
-                    <Video
+                    {loading ? <ActivityIndicator /> : <Video
                         javaScriptEnabled
                         domStorageEnabled
                         origin="http://www.youtube.com"
-                        source={{ uri: 'https://www.youtube.com/embed/B9H8tjoQaAY' }}
-                    />
+                        source={{ uri: `https://www.youtube.com/embed/${data && data[data.length - 1].url}` }}
+                    />}
                 </MainContainer>
             </Container>
         </>
