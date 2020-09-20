@@ -6,6 +6,7 @@ import Event from './Event'
 import Videos from './Videos'
 import Location from './Location'
 import Prays from './Prays'
+import Mission from './Mission'
 
 
 const Routes = createAppContainer(
@@ -15,7 +16,8 @@ const Routes = createAppContainer(
             Event,
             Videos,
             Location,
-            Prays
+            Prays,
+            Mission,
         }, {
             tabBarOptions: {
                 keyboardHidesTabBar: true,
@@ -30,10 +32,13 @@ const Routes = createAppContainer(
                     boxShadow: 'none'
                 }
             }
-        })
+        }),
+
+
     }, {
         initialRouteName: 'App'
-    }
+    },
+
 
     ),
 )
